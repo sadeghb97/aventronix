@@ -45,7 +45,7 @@ publishing {
             }
             groupId = "com.github.sadeghb97"
             artifactId = "aventronix"
-            version = "1.0.1"
+            version = "1.0.3"
         }
     }
 }
