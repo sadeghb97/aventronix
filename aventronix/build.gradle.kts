@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    `maven-publish`
 }
 
 android {
@@ -33,6 +34,19 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            afterEvaluate {
+                from(components["release"])
+            }
+            groupId = "com.github.sadeghb97"
+            artifactId = "aventronix"
+            version = "1.0.1"
+        }
     }
 }
 
