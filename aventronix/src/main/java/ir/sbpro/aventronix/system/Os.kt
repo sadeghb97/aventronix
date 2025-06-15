@@ -2,6 +2,8 @@ package ir.sbpro.aventronix.system
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color.TRANSPARENT
@@ -162,4 +164,20 @@ fun isInternetAvailable(context: Context): Boolean {
         }
     }
     return result
+}
+
+fun copyToClipboard(context: Context, label: String, text: String) {
+    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText(label, text)
+    clipboard.setPrimaryClip(clip)
+}
+
+fun getTextFromClipboard(context: Context): String? {
+    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = clipboard.primaryClip
+    if (clip != null && clip.itemCount > 0) {
+        val item = clip.getItemAt(0)
+        return item.text?.toString()
+    }
+    return null
 }

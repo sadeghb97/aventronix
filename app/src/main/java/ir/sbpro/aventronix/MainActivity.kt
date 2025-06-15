@@ -14,10 +14,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,7 +30,6 @@ import ir.sbpro.aventronix.system.TransparentNavigationBar
 import ir.sbpro.aventronix.ui.SizeInterface
 import ir.sbpro.aventronix.ui.dxp
 import ir.sbpro.aventronix.ui.theme.AventronixTheme
-import ir.sbpro.aventronix.R
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
